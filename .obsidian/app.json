@@ -1,0 +1,21 @@
+{
+  "livePreview": false,
+  "propertiesInDocument": "hidden",
+  "useTab": false,
+  "trashOption": "local",
+  "alwaysUpdateLinks": true,
+  "newFileLocation": "current",
+  "showUnsupportedFiles": true,
+  "attachmentFolderPath": "figs",
+  "showRibbon": false,
+  "readableLineLength": false,
+  "strictLineBreaks": true,
+  "promptDelete": false,
+  "pdfExportSettings": {
+    "pageSize": "Letter",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  },
+  "showInlineTitle": false
+}
