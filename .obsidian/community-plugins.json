@@ -2,13 +2,14 @@
   "url-into-selection",
   "obsidian-outliner",
   "obsidian-image-toolkit",
-  "obsidian-pandoc-reference-list",
   "obsidian-linter",
   "obsidian-latex",
-  "obsidian-zotero-desktop-connector",
   "obsidian-paste-image-rename",
   "obsidian-text-format",
   "obsidian-latex-suite",
   "remember-cursor-position",
-  "obsidian-underline"
+  "obsidian-underline",
+  "painter",
+  "table-editor-obsidian",
+  "obsidian-tikzjax"
 ]

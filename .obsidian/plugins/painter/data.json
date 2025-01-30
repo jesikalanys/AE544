@@ -1,0 +1,17 @@
+{
+  "highlighterStyle": "text-color",
+  "highlighterMethods": "inline-styles",
+  "highlighters": {
+    "red": "#ff0000ff",
+    "green": "#00ff00ff",
+    "blue": "#0000ffff"
+  },
+  "highlighterOrder": [
+    "red",
+    "green",
+    "blue"
+  ],
+  "menuMode": "normal",
+  "cleanSelectors": [],
+  "overwriteMarks": true
+}

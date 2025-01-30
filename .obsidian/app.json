@@ -12,10 +12,12 @@
   "strictLineBreaks": true,
   "promptDelete": false,
   "pdfExportSettings": {
+    "includeName": false,
     "pageSize": "Letter",
     "landscape": false,
     "margin": "0",
-    "downscalePercent": 100
+    "downscalePercent": 70
   },
-  "showInlineTitle": false
+  "showInlineTitle": false,
+  "showLineNumber": false
 }
