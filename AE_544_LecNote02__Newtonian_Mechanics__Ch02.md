@@ -1,6 +1,6 @@
 ---
 date created: 2025-01-12T16:04:10-05:00
-date modified: 2025-01-29T11:29:05-05:00
+date modified: 2025-01-31T12:42:18-05:00
 ---
 # AE_544_LecNote02\__Newtonian_Mechanics__Ch02
 
@@ -156,14 +156,18 @@ Think of the Earth-Moon system in the solar system as an example.
 The total kinetic energy of a system of N constant mass particles mi can therefore be written as
 $$
 \begin{align}
-T &= \frac{1}{2} \sum_{i=1}^{N} m_i \dot{\bm{R}}_i \cdot \dot{\bm{R}}_i 
+T &= \frac{1}{2} \sum_{i=1}^{N} \left( m_i \dot{\bm{R}}_i \cdot \dot{\bm{R}}_i \right)
 \tag{2.49} \\
 %
-&= \frac{1}{2} \sum_{i=1}^{N} m_i (\dot{\bm{R}}_c+\dot{\bm{r}_i}) \cdot (\dot{\bm{R}}_c+\dot{\bm{r}_i})   \tag{Use $\dot{\bm{R}_i}=\dot{\bm{R}}_c+\dot{\bm{r}_i}$} \\
+&= \frac{1}{2} \sum_{i=1}^{N} \left( m_i (\dot{\bm{R}}_c+\dot{\bm{r}_i}) \cdot (\dot{\bm{R}}_c+\dot{\bm{r}_i})   \tag{Use $\dot{\bm{R}_i}=\dot{\bm{R}}_c+\dot{\bm{r}_i}$} \right) \\
 %
-&= \frac{1}{2} \sum_{i=1}^{N} m_i (\dot{\bm{R}}_c \cdot \dot{\bm{R}}_c + 2 \dot{\bm{R}}_c \cdot \dot{\bm{r}_i} + \dot{\bm{r}_i} \cdot \dot{\bm{r}_i})   \tag{Factor out $\dot{\bm{R}_c}$}\\
+&= \frac{1}{2} \sum_{i=1}^{N} \left( m_i (\dot{\bm{R}}_c \cdot \dot{\bm{R}}_c + 2 \dot{\bm{R}}_c \cdot \dot{\bm{r}_i} + \dot{\bm{r}_i} \cdot \dot{\bm{r}_i})   \tag{Factor out $\dot{\bm{R}_c}$}  \right) \\
 %
-&= \frac{1}{2} \left( \sum_{i=1}^{N} m_i \right) \dot{\bm{R}}_c \cdot \dot{\bm{R}}_c + \dot{\bm{R}}_c \cdot \left( \sum_{i=1}^{N} m_i \bm{r}_i \right) + \frac{1}{2} \sum_{i=1}^{N} m_i \dot{\bm{r}}_i \cdot \dot{\bm{r}}_i
+&= \frac{1}{2} \sum_{i=1}^{N} \left( m_i \dot{\bm{R}}_c \cdot \dot{\bm{R}}_c \right) + \sum_{i=1}^{N} \left( m_i \cdot \dot{\bm{R}}_c \cdot \dot\bmr_i \right) + \frac{1}{2} \sum_{i=1}^{N} \left( m_i \dot{\bm{r}}_i \cdot \dot{\bm{r}}_i \right)  \\
+&= \frac{1}{2} \left( \sum_{i=1}^{N} m_i \right) \dot{\bm{R}}_c \cdot \dot{\bm{R}}_c + \dot{\bm{R}}_c \cdot \left( \sum_{i=1}^{N} m_i \dot\bmr_i \right) + \frac{1}{2} \sum_{i=1}^{N} \left( m_i \dot{\bm{r}}_i \cdot \dot{\bm{r}}_i \right)  \\
+&= \frac{1}{2} \left( \sum_{i=1}^{N} m_i \right) \dot{\bm{R}}_c \cdot \dot{\bm{R}}_c + \dot{\bm{R}}_c \cdot \left( \sum_{i=1}^{N} \ddt (m_i \bmr_i) \right) + \frac{1}{2} \sum_{i=1}^{N} \left( m_i \dot{\bm{r}}_i \cdot \dot{\bm{r}}_i \right) \\
+&= \frac{1}{2} \left( \sum_{i=1}^{N} m_i \right) \dot{\bm{R}}_c \cdot \dot{\bm{R}}_c + \dot{\bm{R}}_c \cdot \ddt \left( \sum_{i=1}^{N} (m_i \bmr_i) \right) + \frac{1}{2} \sum_{i=1}^{N} \left( m_i \dot{\bm{r}}_i \cdot \dot{\bm{r}}_i \right) \\
+&= \frac{1}{2} \left( \sum_{i=1}^{N} m_i \right) \dot{\bm{R}}_c \cdot \dot{\bm{R}}_c + \dot{\bm{R}}_c \cdot \ddt \ccancelto[green]{\bm{0}}{\left( \sum_{i=1}^{N} (m_i \bmr_i) \right)} + \frac{1}{2} \sum_{i=1}^{N} \left( m_i \dot{\bm{r}}_i \cdot \dot{\bm{r}}_i \right) \\
 \tag{2.50} \\
 \end{align}
 $$

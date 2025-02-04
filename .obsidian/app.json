@@ -7,7 +7,6 @@
   "newFileLocation": "current",
   "showUnsupportedFiles": true,
   "attachmentFolderPath": "figs",
-  "showRibbon": false,
   "readableLineLength": false,
   "strictLineBreaks": true,
   "promptDelete": false,
