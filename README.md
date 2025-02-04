@@ -18,5 +18,6 @@ If not, you may have opened a wrong directory.
 
 ### Why GitKraken? 
 With GitKraken, you will be able to merge your local changes (if any) to notes and my changes to the notes in an easier manner.
+**PDF files cannot be merged as they are binary files.**
 
 GitKraken Pro is available once you registered GitHub Education Package. Check my lab tutorial above.
