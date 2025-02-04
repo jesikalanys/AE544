@@ -1,9 +1,11 @@
 ---
 date created: 2025-01-26T13:00:00-05:00
-date modified: 2025-01-29T10:47:12-05:00
+date modified: 2025-02-04T00:37:46-05:00
 ---
 
 # AE_544_LecNote03\__Rigid_Body_Kinematics__Ch03.pdf
+
+![[README#Disclaimers]]
 
 Fun facts about rigid body attitude coordinates from authors:
 1. A minimum of three coordinates is required to describe the relative angular displacement between two reference frames.

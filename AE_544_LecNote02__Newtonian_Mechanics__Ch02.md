@@ -1,8 +1,10 @@
 ---
 date created: 2025-01-12T16:04:10-05:00
-date modified: 2025-01-31T12:42:18-05:00
+date modified: 2025-02-04T00:30:07-05:00
 ---
 # AE_544_LecNote02\__Newtonian_Mechanics__Ch02
+
+![[README#Disclaimers]]
 
 ## Newton’s Laws
 
@@ -336,6 +338,15 @@ $$
 $$
 \dot{\bm{H}}_P = \bm{L}_P + M \ddot{\bm{R}}_P \times \left( \bm{R}_c - \bm{R}_P \right)
 $$
+
+
+## Textbook problem 2.10
+![[fig-p2-10_rolling_cylinder_with_offset_mass.png|600]]
+
+## Textbook problem 2.11
+![[fig-p2-11_rolling_vall_inside_sphere.png|600]]
+
+## Rocket Problem
 
 
 ## Homework 01

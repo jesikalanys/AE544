@@ -9,7 +9,7 @@
 
 *.md
 
-*.pdf
+# *.pdf
 
 *.pptx
 
@@ -20,3 +20,7 @@
 AE_544_LecNote00__Introduction.md
 
 *.zip
+
+AE_544_LecNote_Examples_Ch01_Ch02.m
+
+.obsidian/plugins/remember-cursor-position/cursor-positions.json
