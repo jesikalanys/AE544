@@ -1,6 +1,6 @@
 ---
 date created: 2025-01-12T16:04:10-05:00
-date modified: 2025-02-04T00:30:07-05:00
+date modified: 2025-02-05T00:45:06-05:00
 ---
 # AE_544_LecNote02\__Newtonian_Mechanics__Ch02
 
@@ -88,6 +88,103 @@ The nonlinear differential equations of motion of the spherical pendulum mass $m
 $$
 \ddot{\theta} = \frac{-g \sin \theta}{L}
 $$
+
+## Textbook problem 2.10
+![[fig-p2-10_rolling_cylinder_with_offset_mass.png|600]]
+
+### (a) EOM
+Assuming no slip between the cylinder and the ground.
+
+Inertial frame $\calM$.
+
+Translational moving frame $\calN$.
+
+Moving and rotating body frame $\calE$.
+
+Position vector
+$$
+\bmr = \bmr_N + R \nht{2} + \frac{1}{2}R\eht{r}
+$$
+
+Velocity vector
+$$
+\begin{aligned}
+\bmv = \dot{\bmr} &= \ddtM \left( \bmr_N + R \nht{2} + \frac{1}{2}R\eht{r} \right) \\
+&= \dot{\theta}R\nht{1} + R \ddtM\nht{2} + \frac{1}{2}R \ddtM\eht{r} \\
+&= \dot{\theta}R\nht{1} + R \bmo_{\calN/\calM}\times\nht{2} + \frac{1}{2}R\bmo_{\calE/\calM}\times\eht{r} \\
+&= \dot{\theta}R\nht{1} + \bm{0} + \frac{1}{2}R\dot{\theta}\eht{\theta} \\
+&= \dot{\theta}R(\cos\theta\eht{\theta}+\sin\theta\eht{r}) + \frac{1}{2}R\dot{\theta}\eht{\theta} \\
+&= (\dot{\theta}R\cos\theta + \frac{1}{2}R\dot{\theta})\eht{\theta} + \dot{\theta}R\sin\theta\eht{r} \\
+\end{aligned}
+$$
+
+Acceleration vector
+$$
+\begin{aligned}
+\bm{a} = \dot{\bmv} &= \ddtM \left( \dot{\theta}R\nht{1} + \bm{0} + \frac{1}{2}R\dot{\theta}\eht{\theta} \right) \\
+&= \ddtN \left( \dot{\theta}R\nht{1} \right) + \bmo_{\calN/\calM}\times\left( \dot{\theta}R\nht{1} \right) + \ddtE \left( \frac{1}{2}R\dot{\theta}\eht{\theta} \right) + \bmo_{\calE/\calM} \times \left( \frac{1}{2}R\dot{\theta}\eht{\theta} \right) \\
+&= \ddot{\theta}R\nht{1} + \bm{0} + \frac{1}{2}R\ddot{\theta}\eht{\theta} - \frac{1}{2}R\dot{\theta}^2\eht{r} \\
+&= \ddot{\theta}R(\cos\theta\eht{\theta}+\sin\theta\eht{r}) + \bm{0} + \frac{1}{2}R\ddot{\theta}\eht{\theta} - \frac{1}{2}R\dot{\theta}^2\eht{r} \\
+&= \left(\ddot{\theta}R\cos\theta + \frac{1}{2}R\ddot{\theta}\right)\eht{\theta} + \left(  \ddot{\theta}R\sin\theta - \frac{1}{2}R\dot{\theta}^2\right)\eht{r} \\
+\end{aligned}
+$$
+
+Total external force is
+$$
+\begin{aligned}
+\bm{F}_e &= (mg\sin\alpha\nht{1} - mg\cos\alpha\nht{2}) + N\nht{2} \\
+&= mg\sin\alpha\nht{1} + (N - mg\cos\alpha)\nht{2} \\
+&= mg\sin\alpha (\cos\theta\eht{\theta}+\sin\theta\eht{r})   +   (N - mg\cos\alpha) (-\sin\theta\eht{\theta} + \cos\theta\eht{r}) \\
+&= \left(mg\sin\alpha\cos\theta - (N-mg\cos\alpha)\sin\theta \right) \eht{\theta} + \left( mg\sin\alpha \sin\theta+(N-mg\cos\alpha) \cos\theta) \eht{r} \right)
+\end{aligned}
+$$
+
+$$
+\left\{
+\begin{aligned}
+mg\sin\alpha\cos^2\theta - (N-mg\cos\alpha)\sin\theta \cos\theta &= m \left(\ddot{\theta}R\cos\theta + \frac{1}{2}R\ddot{\theta}\right) \cos\theta \\
+mg\sin\alpha \sin^2\theta+(N-mg\cos\alpha) \cos\theta \sin\theta &= m \left(  \ddot{\theta}R\sin\theta - \frac{1}{2}R\dot{\theta}^2\right) \sin\theta \\
+\end{aligned}
+\right.
+$$
+$$
+\begin{aligned}
+mg\sin\alpha\cos^2\theta + mg\sin\alpha \sin^2\theta &= m \left(\ddot{\theta}R\cos\theta + \frac{1}{2}R\ddot{\theta}\right) \cos\theta + m \left(  \ddot{\theta}R\sin\theta - \frac{1}{2}R\dot{\theta}^2\right) \sin\theta \\
+g\sin\alpha &=  \left(\ddot{\theta}R\cos\theta + \frac{1}{2}R\ddot{\theta}\right) \cos\theta +  \left(  \ddot{\theta}R\sin\theta - \frac{1}{2}R\dot{\theta}^2\right) \sin\theta \\
+g\sin\alpha &=  \left( R\cos^2\theta+\frac{1}{2}R\cos\theta+R\sin^2\theta \right) \ddot{\theta} - \frac{1}{2}R\sin\theta \dot{\theta}^2 \\
+\left( R+\frac{1}{2}R\cos\theta \right) \ddot{\theta}  &=  g\sin\alpha + \frac{1}{2}R\dot{\theta}^2 \sin\theta \\
+\left( 2R+R\cos\theta \right) \ddot{\theta}  &=  2g\sin\alpha + R\dot{\theta}^2 \sin\theta \\
+\ddot{\theta}  &=  \frac{2g\sin\alpha + R\dot{\theta}^2 \sin\theta} {R\left( 2+\cos\theta \right) }  \\
+\end{aligned}
+$$
+
+Alternatively, keep $F_e$ in $\calN$ but convert $\bm{a}$ to $\calN$
+$$
+\begin{aligned}
+\bm{a} &= \ddot{\theta}R\nht{1} + \bm{0} + \frac{1}{2}R\ddot{\theta}\eht{\theta} - \frac{1}{2}R\dot{\theta}^2\eht{r} \\
+&= \ddot{\theta}R\nht{1} + \bm{0} + \frac{1}{2}R\ddot{\theta} (\cos\theta\nht1-\sin\theta\nht2) - \frac{1}{2}R\dot{\theta}^2 (\sin\theta\nht1+\cos\theta\nht2) \\
+&= \left( \ddot{\theta}R+\frac{1}{2}R\ddot{\theta}\cos\theta-\frac{1}{2}R\dot{\theta}^2\sin\theta \right) \nht{1} + \left( -\frac{1}{2}R\ddot{\theta}\sin\theta-\frac{1}{2}R\dot{\theta}^2\cos\theta\right) \nht{2} \\
+\end{aligned}
+$$
+Then directly, we have 
+$$
+\begin{aligned}
+mg\sin\alpha &= m \left( \ddot{\theta}R+\frac{1}{2}R\ddot{\theta}\cos\theta-\frac{1}{2}R\dot{\theta}^2\sin\theta \right) \\
+g\sin\alpha &= \ddot{\theta} \left( R+\frac{1}{2}R\cos\theta\right)-\frac{1}{2}R\dot{\theta}^2\sin\theta  \\
+\ddot{\theta}  &=  \frac {\left( g\sin\alpha + \frac{1}{2}R\dot{\theta}^2\sin\theta \right)} {\left( R+\frac{1}{2}R\cos\theta\right)} = \frac { 2g\sin\alpha + R\dot{\theta}^2\sin\theta } {\left( 2R+R\cos\theta\right)} \\
+\end{aligned}
+$$
+which is the same result.
+
+### (b) Supporting force vector
+$$
+\begin{align}
+(N - mg\cos\alpha) &= m \left( -\frac{1}{2}R\ddot{\theta}\sin\theta-\frac{1}{2}R\dot{\theta}^2\cos\theta\right) \\
+(N - mg\cos\alpha) &= m \left( -\frac{1}{2}R \left( \frac { 2g\sin\alpha + R\dot{\theta}^2\sin\theta } {\left( 2R+R\cos\theta\right)} \right)\sin\theta-\frac{1}{2}R\dot{\theta}^2\cos\theta\right)   \tag{plug in $\ddot{\theta}$}\\ 
+N &= \dots  \tag{omitted}
+\end{align}
+$$
+Finally, don't forget the supporting force is a vector, $\bm{N} = N \nht2$.
 
 ## A system of particles
 
@@ -340,18 +437,126 @@ $$
 $$
 
 
-## Textbook problem 2.10
-![[fig-p2-10_rolling_cylinder_with_offset_mass.png|600]]
-
 ## Textbook problem 2.11
-![[fig-p2-11_rolling_vall_inside_sphere.png|600]]
+![[fig-p2-11_rolling_vall_inside_sphere.png|600]] 
+>[!warning] Be careful about that which of $\sht \phi$ and $\sht\theta$ is the second basis and why.
+
+### (a) EOM in terms of $\phi$
+Initial speed is horizontal, in $\nht1$-$\nht2$ plane. 
+
+Inertial frame $\calN$.
+
+Spherical frame $\calS: \{\sht r, \sht\phi, \sht\theta\}$.
+
+Relationship among axes using geometry:
+$$
+\begin{aligned}
+\sht{r} &= \cos \phi\cos\theta\nht1 + \cos \phi\sin\theta\nht2 - \sin \phi\nht3 \\
+\sht{\theta} &= -\sin\theta\nht1 + \cos\theta\nht2 \\
+\sht{\phi} &= \sin \phi \cos\theta\nht1 + \sin \phi \sin\theta \nht2 - \cos\phi\nht3
+\end{aligned}
+$$
+Or write in vectrix and DCM format:
+$$
+\Bmt{\sht{r}\\\sht{\theta}\\ \sht{\phi}} = 
+\bmt{\cos \phi \cos\theta & \cos \phi \sin\theta & -\sin \phi \\
+-\sin\theta & \cos\theta & 0\\
+\sin \phi \cos\theta & \sin \phi \sin\theta & -\cos \phi} \Bmt{\nht1\\ \nht2 \\ \nht3}
+$$
+
+Angular velocity 
+$$
+\begin{aligned}
+\bmo_{\calS/\calN} &= \dot{\theta}\nht3 + \dot{\phi}\sht{\phi} \\
+&= \dot{\theta} (-\sin \phi\sht{r} -\cos \phi\sht{\phi}) + \dot{\phi}\sht{\theta} \\
+&= -\dot{\theta}\sin \phi\sht{r} -\dot{\theta}\cos \phi\sht{\phi} + \dot{\phi}\sht{\theta}
+\end{aligned}
+$$
+
+Position vector $\bmr = r\sht{r}$.
+
+Velocity vector:
+$$
+\begin{aligned}
+\dot{\bmr} &= r \ddtN\sht{r}  \\
+&= r \ddtS \sht{r} + r \bmo_{\calE/\calN} \times \sht{r} \\
+&= r  (-\dot{\theta}\sin \phi\sht{r} -\dot{\theta}\cos \phi\sht{\phi} + \dot{\phi}\sht{\theta}) \times \sht{r} \\
+&= r\dot{\theta}\cos\phi\sht{\theta} + r \dot{\phi}\sht{\phi}
+\end{aligned}
+$$
+Acceleration vector:
+$$
+\begin{aligned}
+\ddot{\bmr} &= \ddtN (r\dot{\theta}\cos\phi\sht{\theta} + r \dot{\phi}\sht{\phi}) \\
+&= \ddtS (r\dot{\theta}\cos\phi\sht{\theta} + r \dot{\phi}\sht{\phi}) + (-\dot{\theta}\sin \phi\sht{r} -\dot{\theta}\cos \phi\sht{\phi} + \dot{\phi}\sht{\theta}) \times (r\dot{\theta}\cos\phi\sht{\theta} + r \dot{\phi}\sht{\phi}) \\
+%
+&= r \ddot{\theta} \cos \phi \sht{\theta} - r \dot{\theta} \dot{\phi} \sin \phi \sht{\theta} + r \ddot{\phi}\sht\phi + \left( r \dot{\theta}^2\sin \phi \cos \phi\sht{\phi} - \dot{\theta}r \dot{\phi}\sin \phi\sht\theta - r \dot{\theta}^2\cos^2\phi\sht{r} - r \dot{\phi}^2\sht{r}  \right)  \\
+%
+&= - (r \dot{\theta}^2\cos^2\phi + r \dot{\phi}^2)\sht{r}  +  (r \dot{\theta}^2\sin \phi \cos \phi + r \ddot{\phi})\sht{\phi}  +  (r \ddot{\theta} \cos \phi \sht{\theta} - 2r \dot{\theta} \dot{\phi} \sin \phi) \sht{\theta}   \\
+\end{aligned}
+$$
+
+The force vector is 
+$$
+\begin{align}
+\bm{F} &= -N\sht{r} - mg\nht{3}  \tag{supporting + gravity} \\ 
+&= -N\sht{r} - mg(-\sin \phi\sht r - \cos \phi\sht\phi) \\
+&= (mg\sin \phi-N)\sht r + mg\cos \phi\sht\phi
+\end{align}
+$$
+
+Using Newton's 2nd law:
+$$
+\begin{aligned}
+mg\sin \phi-N &= - m (r \dot{\theta}^2\cos^2\phi + r \dot{\phi}^2) \\
+g\cos \phi &= r \dot{\theta}^2\sin \phi \cos \phi + r \ddot{\phi} \\
+0 &= r \ddot{\theta} \cos \phi \sht{\theta} - 2r \dot{\theta} \dot{\phi} \sin \phi
+\end{aligned}
+$$
+
+If we can get an expression of $\dot{\theta}$ in terms of $(\phi, \dot{\phi}, \ddot{\phi})$, then we can get the EOM in terms of $\phi$ from the second equation above.
+
+Using conservation of angular momentum along $\nht3$:
+$$
+\begin{aligned}
+\bmH \cdot \nht3 &= (\bmr \times m\bmv) \cdot \nht3 \\
+&= mr\sht{r} \times (r\dot{\theta}\cos\phi\sht{\theta} + r \dot{\phi}\sht{\phi}) \cdot \nht3 \\
+&= (-mr\sht{r}r\dot{\theta}\cos\phi\sht\phi + mr^2 \dot{\phi}\sht{\theta}) \cdot \nht3 \\
+&= mr^2\dot{\theta}\cos^2\phi \\
+&= \bmH_0 \cdot \nht3 = mr^2 \dot{\theta}_0 \cos^2\phi_0
+\end{aligned}
+$$
+So,
+$$
+\dot{\theta} = \frac{\cos^2\phi_0}{\cos^2\phi}\dot{\theta}_0
+$$
+Finally,
+$$
+\ddot{\phi} = g\cos \phi/r - \sin \phi \cos \phi \left( \frac{\cos^2\phi_0}{\cos^2\phi}\dot{\theta}_0 \right)^2
+$$
+
+### (b) Normal supporting force
+$$
+N = mg\sin \phi + m(r \dot{\theta}^2\cos^2\phi + r \dot{\phi}^2)
+$$
+
+### (c) Another extrema with $\dot{\phi}=0$
+$$
+\begin{aligned}
+T + V &= \frac{m}{2} \|r\dot{\theta}\cos\phi\sht{\theta} + r \dot{\phi}\sht{\phi}\|^2 - mgr\sin \phi \\
+&= \frac{m}{2} r^2\dot{\theta}^2\cos^2\phi + \frac{m}{2} r^2 \dot{\phi}^2 - mgr\sin \phi
+\end{aligned}
+$$
+Plug in $\dot{\theta}$, $\dot{\phi}=0$, $\phi_0, \theta_0, \dot{\theta}_0$ and we get the equation to solve for $\phi$.
 
 ## Rocket Problem
 
+Study Section 2.6 Rocket Problem and try answer textbook problem 2.15.
+![[fig-p2-15_Newton's_second_law_varying_mass.png|600]]
 
 ## Homework 01
 
-Due on Feb 02. 
+Due on Feb 08. 
 Check Canvas for detailed guidance on submissions.
 
 Use office hours if you need.
